@@ -95,7 +95,8 @@ http://localhost:11434
 ## 📷 Demo
 
 ![Upload](assets/upload.png)
-![Output](assets/output.png)
+![Output](assets/output(0).png)
+![Output](assets/output(1).png)
 
 ---
 
