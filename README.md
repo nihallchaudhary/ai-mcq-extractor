@@ -6,17 +6,17 @@ An AI-powered application that extracts multiple-choice questions (MCQs) from un
 
 ## 🚀 Overview
 
-This project is designed to automate the process of extracting MCQs from messy exam PDFs. It leverages a locally hosted AI model to intelligently parse text, identify valid questions, and structure them for easy use.
+This project automates the extraction of MCQs from messy exam PDFs using a locally hosted AI model. It processes raw text, identifies valid questions, and structures them into a usable format.
 
-The system handles noisy input data, broken text, and formatting issues, making it useful for students, educators, and content creators.
+The system is designed to handle noisy data, broken formatting, and large documents efficiently.
 
 ---
 
 ## ✨ Features
 
 * 📄 Extracts text from PDFs using **pdfplumber**
-* 🤖 Uses a locally hosted AI model (**LLaMA3**) for intelligent MCQ extraction
-* ⚡ Processes large documents efficiently using chunking
+* 🤖 Uses a locally hosted AI model (**LLaMA3 via Ollama**) for MCQ extraction
+* ⚡ Handles large documents using chunking with overlap
 * 🧹 Cleans and structures output into JSON format
 * 🔁 Removes duplicate questions automatically
 * 🖥️ Interactive UI built with **Streamlit**
@@ -30,19 +30,48 @@ The system handles noisy input data, broken text, and formatting issues, making 
 * pdfplumber
 * Requests
 * JSON
-* Local AI Model (LLaMA3 via API)
+* Ollama (Local AI Model - LLaMA3)
 
 ---
 
 ## ⚙️ How It Works
 
-1. Upload a PDF file through the Streamlit interface
+1. Upload a PDF file through the UI
 2. Extract raw text from each page
-3. Split text into chunks for efficient AI processing
-4. Send chunks to the AI model for MCQ extraction
+3. Split text into chunks for efficient processing
+4. Send chunks to the AI model via Ollama API
 5. Parse and clean JSON output
 6. Remove duplicate questions
-7. Display MCQs interactively in the UI
+7. Display MCQs interactively
+
+---
+
+## ⚙️ Setup Instructions (Ollama Required)
+
+### 1. Install Ollama
+
+Download from: https://ollama.com
+
+### 2. Pull and Run Model
+
+```bash
+ollama run llama3
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the App
+
+```bash
+streamlit run app.py
+```
+
+⚠️ Make sure Ollama is running locally at:
+http://localhost:11434
 
 ---
 
@@ -57,35 +86,33 @@ The system handles noisy input data, broken text, and formatting issues, making 
 
 ## 🧠 Key Highlights
 
-* Handles unstructured and noisy data effectively
-* Demonstrates integration of AI with real-world applications
+* Handles unstructured and noisy PDF data
+* Demonstrates AI integration in real-world applications
 * End-to-end pipeline from raw PDF → structured MCQs
-
----
-
-## 🚧 Future Improvements
-
-* Export to CSV / Excel
-* Add answer key detection
-* Improve extraction accuracy
-* Deploy as a web application
-
----
-
-## ▶️ Run Locally
-
-```bash
-pip install -r requirements.txt
-streamlit run app.py
-```
 
 ---
 
 ## 📷 Demo
 
-![Upload Screen](assets/upload.png)
+![Upload](assets/upload.png)
+![Output](assets/output.png)
 
-![Extraction Output](assets/output.png)
+---
+
+## 🚧 Limitations
+
+* Extraction accuracy depends on PDF quality
+* Requires Ollama to run locally
+* AI output may need minor cleaning in some cases
+
+---
+
+## 🔮 Future Improvements
+
+* Export to CSV / Excel
+* Add answer key detection
+* Improve extraction accuracy
+* Deploy as a web application
 
 ---
 
