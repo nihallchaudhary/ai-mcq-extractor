@@ -108,6 +108,16 @@ http://localhost:11434
 
 ---
 
+## 🚧 Project Status
+
+This project is currently under development.
+
+* MCQ extraction works for structured PDFs
+* Performance may vary for complex or scanned documents
+* Improvements in parsing and accuracy are in progress
+
+---
+
 ## 🔮 Future Improvements
 
 * Export to CSV / Excel
